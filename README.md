@@ -1,27 +1,27 @@
-# Template repository
+# Puppy list
+(Such a unique name, wow)
 
-Template repository for the Jetpack Compose [#AndroidDevChallenge](https://developer.android.com/dev-challenge).
+<!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
+<!--- You can find both of these in the url bar when you open your repository in github. -->
+![Workflow result](https://github.com/naturlecso/android-dev-challenge-compose-puppy/workflows/Check/badge.svg)
 
-## Getting started
-Copy this repository by pressing the "Use this template" button in Github.
-Clone your repository and open it in the latest [Android Studio (Canary build)](https://developer.android.com/studio/preview).
 
-## Submission requirements
-- Follow the challenge description on the project website: [developer.android.com/dev-challenge](https://developer.android.com/dev-challenge)
-- All UI should be written using Jetpack Compose
-- The Github Actions workflow should complete successfully
-- Include two screenshots of your submission in the [results](results) folder. The names should be
-  screenshot_1.png and screenshot_2.png.
-- Include a screen record of your submission in the [results](results) folder. The name should be
-  video.mp4
-- Replace the contents of [README.md](README.md) with the contents of [README-template.md](README-template.md) and fill out the template.
+## :scroll: Description
+<!--- Describe your app in one or two sentences -->
+This is a simple list-detail application using the Jetpack Compose library for the UI layer. As the app is focusing only on the UI, it uses mock data for the puppies :file_cabinet:
 
-## Code formatting
-The CI uses [Spotless](https://github.com/diffplug/spotless) to check if your code is formatted correctly and contains the right licenses.
-Internally, Spotless uses [ktlint](https://github.com/pinterest/ktlint) to check the formatting of your code.
-To set up ktlint correctly with Android Studio, follow one of the [listed setup options](https://github.com/pinterest/ktlint#-with-intellij-idea).
 
-Before committing your code, run `./gradlew app:spotlessApply` to automatically format your code.
+## :bulb: Motivation and Context
+<!--- Optionally point readers to interesting parts of your submission. -->
+<!--- What are you especially proud of? -->
+The point of this app is improving my Compose skills (the Lego robot looks cool too :wink:). 
+I wanted to add a minimal randomness to the :dog: data, which sometimes produces weird combinations :tada: 
+The navigation has been done with the new navigation-compose library.
+
+
+## :camera_flash: Screenshots
+<!-- You can add more screenshots here if you like -->
+<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">
 
 ## License
 ```
