@@ -18,11 +18,13 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
+import androidx.navigation.compose.*
+import com.example.androiddevchallenge.data.puppies
+import com.example.androiddevchallenge.ui.PuppyDetailsScreen
+import com.example.androiddevchallenge.ui.PuppyListScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -36,11 +38,29 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-// Start building your app here!
 @Composable
 fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+    val navController = rememberNavController()
+
+    NavHost(navController, startDestination = "list") {
+        composable("list") {
+            PuppyListScreen(
+                puppies = puppies,
+                onSelect = { navController.navigate("details/${it.id}") }
+            )
+        }
+        composable(
+            "details/{puppyId}",
+            arguments = listOf(navArgument("puppyId") { type = NavType.LongType })
+
+        ) { backStackEntry ->
+            PuppyDetailsScreen(
+                puppy = backStackEntry.arguments?.getLong("puppyId")?.let { id ->
+                    puppies.find { it.id == id }
+                },
+                onBackPressed = { navController.popBackStack() }
+            )
+        }
     }
 }
 
